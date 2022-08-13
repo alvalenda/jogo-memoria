@@ -42,11 +42,11 @@ const displayPokemon = (pokePairs) => {
     front.className = "front";
     back.className = "back rotate";
     [img.src, img.alt] = [front_default, name];
-    title.innerText = name;
+    // title.innerText = name;
     div.appendChild(front);
     div.appendChild(back);
     back.appendChild(img);
-    back.appendChild(title);
+    // back.appendChild(title);
     pokemonContainer.appendChild(div);
   });
 };
