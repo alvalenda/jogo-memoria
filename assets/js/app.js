@@ -1,9 +1,8 @@
 const pokeAPIBaseUrl = "https://pokeapi.co/api/v2/";
 
 const loadPokemon = async (pokemonNumber) => {
-  const response = await fetch(`${pokeAPIBaseUrl}pokemon/${pokemonNumber}`);
-  const data = await response.json();
-  return data;
+  const response = fetch(`${pokeAPIBaseUrl}pokemon/${pokemonNumber}`);
+  return response;
 };
 
 const randomPokemon = async () => {
@@ -18,13 +17,21 @@ const buildPokemonArray = async () => {
   const randomIds = [...(await randomPokemon())];
   console.log(randomIds);
   const promises = randomIds.map((id) => loadPokemon(id));
-  const data = await Promise.all(promises);
+  const responses = await Promise.all(promises);
+  const data = await Promise.all(responses.map((response) => response.json()));
   return data;
 };
 
+const displayPokemon = (pokeArray) => {};
+
+const resetGame = async (pokeArray) => {
+  pokeArray = await buildPokemonArray();
+  displayPokemon(pokeArray);
+};
+
 const main = async () => {
-  const poke = await buildPokemonArray();
-  console.log(poke);
+  const pokeArray = await buildPokemonArray();
+  console.log(pokeArray);
 };
 
 main();
