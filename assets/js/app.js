@@ -30,7 +30,7 @@ const displayPokemon = (pokePairs) => {
 
   pokePairs.forEach((pokemon) => {
     const { name, sprites } = pokemon;
-    const { front_default } = sprites;
+    const { front_default } = sprites["other"]["official-artwork"];
     const div = document.createElement("div");
     const front = document.createElement("div");
     const back = document.createElement("div");
@@ -52,7 +52,7 @@ const displayPokemon = (pokePairs) => {
 };
 
 const clickCard = (card) => {
-//   console.log(card.dataset.name);
+  //   console.log(card.dataset.name);
   const [front, back] = getFrontandBackFromCard(card);
 
   if (front.classList.contains("rotate") || control.isPaused) {
