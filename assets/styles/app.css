@@ -83,7 +83,6 @@ header {
 
 .back {
   text-align: center;
-  font-family: pokemon-solid;
 }
 
 .back h2 {
@@ -92,7 +91,7 @@ header {
 }
 
 .back img {
-  height: 75%;
+  height: 80%;
 }
 
 .rotate {
@@ -113,13 +112,13 @@ button {
 }
 
 button:hover {
-    padding: 10px 23px;
+  padding: 10px 23px;
 }
 
 button:active {
-    border: outset rgba(198, 40, 40, 0.8);
+  border: outset rgba(198, 40, 40, 0.8);
 }
 
-#footer-container{
-    height: 100px;
+#footer-container {
+  height: 100px;
 }
