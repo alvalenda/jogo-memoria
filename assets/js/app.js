@@ -23,15 +23,16 @@ const buildPokemonArray = async () => {
   return data;
 };
 
-const displayPokemon = (pokepairs) => {
-  pokepairs.sort((_) => Math.random() - 0.5);
-  pokepairs.map((p) => console.log(p.name));
+const displayPokemon = (pokePairs) => {
+  pokePairs.sort((_) => Math.random() - 0.5);
+  pokePairs.map((p) => console.log(p.name));
 
-  pokepairs.forEach((pokemon) => {
+  pokePairs.forEach((pokemon) => {
     const { name, sprites } = pokemon;
     const { front_default } = sprites;
-    const div = document.createElement("div", { className: "card" });
+    const div = document.createElement("div");
     const img = document.createElement("img");
+    div.className = "card";
     img.src = front_default;
     img.alt = name;
     div.appendChild(img);
