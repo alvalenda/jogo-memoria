@@ -16,7 +16,7 @@ body {
   font-family: "pokemon-hollow", sans-serif;
   font-size: 16px;
   letter-spacing: 5px;
-  color: #333;
+  color: rgb(0, 0, 0);
   background-color: hsl(6, 60%, 60%);
   text-align: center;
   height: 100vh;
@@ -26,9 +26,9 @@ body {
 header {
   display: flex;
   flex-flow: column;
-  justify-content: space-around;
+  justify-content: center;
   align-items: center;
-  font-size: 24px;
+  font-size: 32px;
   width: 100%;
 }
 
@@ -97,4 +97,29 @@ header {
 
 .rotate {
   transform: rotateY(180deg);
+}
+
+button {
+  font-size: 18px;
+  background-color: rgb(198, 40, 40);
+  box-shadow: 0 2px 2px rgba(0, 0, 0, 0.6);
+  color: #fff;
+  border-radius: 50px;
+  border: outset rgba(198, 40, 40, 0);
+  padding: 10px 20px;
+  cursor: pointer;
+  margin-bottom: 30px;
+  transition: all 0.2s ease-in-out;
+}
+
+button:hover {
+    padding: 10px 23px;
+}
+
+button:active {
+    border: outset rgba(198, 40, 40, 0.8);
+}
+
+#footer-container{
+    height: 100px;
 }
