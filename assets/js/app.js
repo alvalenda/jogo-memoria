@@ -25,19 +25,33 @@ const buildPokemonArray = async () => {
 
 const displayPokemon = (pokePairs) => {
   pokePairs.sort((_) => Math.random() - 0.5);
-  pokePairs.map((p) => console.log(p.name));
+  //   pokePairs.map((p) => console.log(p.name));
 
   pokePairs.forEach((pokemon) => {
     const { name, sprites } = pokemon;
     const { front_default } = sprites;
     const div = document.createElement("div");
+    const front = document.createElement("div");
+    const back = document.createElement("div");
     const img = document.createElement("img");
+    const title = document.createElement("h2");
     div.className = "card";
-    img.src = front_default;
-    img.alt = name;
-    div.appendChild(img);
+    div.setAttribute("onclick", "clickCard(this)");
+    div.setAttribute("data-name", pokemon.name);
+    front.className = "front";
+    back.className = "back rotate";
+    [img.src, img.alt] = [front_default, name];
+    title.innerText = name;
+    div.appendChild(front);
+    div.appendChild(back);
+    back.appendChild(img);
+    back.appendChild(title);
     pokemonContainer.appendChild(div);
   });
+};
+
+const clickCard = (card) => {
+  console.log(card.dataset.name);
 };
 
 const resetGame = async (pokeArray) => {
