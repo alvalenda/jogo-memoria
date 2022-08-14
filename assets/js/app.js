@@ -58,7 +58,10 @@ const clickCard = (card) => {
   if (front.classList.contains("rotate") || control.isPaused) {
     return;
   }
+  gameLogic(card, front, back);
+};
 
+const gameLogic = (card, front, back) => {
   control.isPaused = true;
   rotateElements([front, back]);
 
